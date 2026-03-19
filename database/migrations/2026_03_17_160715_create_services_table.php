@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('libelle');
             $table->text('description');
             $table->decimal('prix',10,2);
-            $table->foreignId("mercenaire_id")->constrained()->onDelete("cascade")->onUpdate("cascade");
+            $table->foreignId("mercenaire_id")->constrained('mercenaires','id')->onDelete("cascade")->onUpdate("cascade");
             $table->timestamps();
         });
     }
